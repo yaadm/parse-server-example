@@ -1,12 +1,12 @@
 
 Parse.Cloud.define('hello', function(req, res) {
   
-  Parse.Cloud.useMasterKey();
   console.log("hello function called");
   
   var query = new Parse.Query(Parse.Installation);
   query.containedIn('channels', req.params.channels);
 
+  Parse.Cloud.useMasterKey();
   Parse.Push.send({
     where: query,
     data: {
