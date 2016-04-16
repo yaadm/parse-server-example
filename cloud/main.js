@@ -1,6 +1,8 @@
 
 Parse.Cloud.define('hello', function(req, res) {
   
+  console.log("hello function called");
+  
   var query = new Parse.Query(Parse.Installation);
   query.containedIn('channels', req.params.channels);
 
