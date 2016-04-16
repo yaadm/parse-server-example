@@ -1,7 +1,7 @@
 
 Parse.Cloud.define('sendpush', function(req, res) {
   
-  console.log("sendpush function called");
+  console.log("channels: " + req.params.channels);
   
   var query = new Parse.Query(Parse.Installation);
   query.containedIn('channels', req.params.channels);
