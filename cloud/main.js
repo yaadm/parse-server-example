@@ -18,7 +18,7 @@ Parse.Cloud.define('hello', function(req, res) {
     },
     error: function(error) {
       // Handle error
-      res.error('Hi');
+      res.error(error);
     }
   });
   
