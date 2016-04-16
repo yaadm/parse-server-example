@@ -6,7 +6,6 @@ Parse.Cloud.define('hello', function(req, res) {
   var query = new Parse.Query(Parse.Installation);
   query.containedIn('channels', req.params.channels);
 
-  Parse.Cloud.useMasterKey();
   Parse.Push.send({
     where: query,
     data: {
@@ -20,7 +19,8 @@ Parse.Cloud.define('hello', function(req, res) {
     error: function(error) {
       // Handle error
       res.error(error);
-    }
+    },
+    useMasterKey: true
   });
   
 });
