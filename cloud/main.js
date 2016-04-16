@@ -1,6 +1,7 @@
 
 Parse.Cloud.define('hello', function(req, res) {
   
+  Parse.Cloud.useMasterKey();
   console.log("hello function called");
   
   var query = new Parse.Query(Parse.Installation);
